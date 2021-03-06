@@ -1,18 +1,18 @@
-import react,{useState,useEffect} from 'react'
+import {useState,useEffect} from 'react'
 import '../../../App.css'
-import {Button,Box,Paper,Container} from '@material-ui/core'
+import {Button,Box,Container} from '@material-ui/core'
 import SaveIcon from '@material-ui/icons/Save';
 import Usestyles from './styles'
 import Notes from '../../Notes/Notes'
 import jsPDF from 'jspdf'
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
-const mic = new SpeechRecognition()
-
+const mic = new SpeechRecognition();
+console.log(mic);
 mic.continuous = true
 mic.interimResults = true
 mic.lang = 'en-US'
-const App=()=> {
+const Notessave=()=> {
   const [islistening,setislistening]=useState(false);
   const [note,setNote]=useState('');
   const [notes,setNotes]=useState([]);
@@ -62,8 +62,8 @@ const App=()=> {
          res+=x;
        })
        console.log(res);
-       doc.text(20,20,res);
-      
+       doc.text(50,50,res);
+     
        doc.save("output.pdf");
   }
   const handleListener=()=>{
@@ -113,4 +113,4 @@ const App=()=> {
   );
 }
 
-export default App;
+export default Notessave;

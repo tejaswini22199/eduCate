@@ -131,18 +131,108 @@
 // };
 
 // export default Navbar
-import React from 'react'
-import { Link } from 'react-router-dom'
-export default function Navbar({open, setOpen}) {
+
+// export default function Navbar({open, setOpen}) {
     
-    return (
-        <div>
-            <div className={open ? "viewport-nav" : "viewport-open"} style={{fontFamily: 'Syncopate, sans-serif' , fontSize: '4vh' , letterSpacing:'0.25vw'}} onClick={() => setOpen(!open)}>
-                <Link to="/">Dashboard</Link>
-                <Link to="/savenotes">Savenotes</Link>
-                <Link to="/pdfeditor">PDFEditor</Link>
+//     return (
+//         <div>
+//             <div className={open ? "viewport-nav" : "viewport-open"} style={{fontFamily: 'Syncopate, sans-serif' , fontSize: '4vh' , letterSpacing:'0.25vw'}} onClick={() => setOpen(!open)}>
+//                 <Link to="/home">Dashboard</Link>
+//                 <Link to="/savenotes">Savenotes</Link>
+//                 <Link to="/pdfeditor">PDFEditor</Link>
                 
-            </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+
+
+import React,{useState} from "react";
+import '../../tailwind.css'
+import '../../tailwind.min.css';
+import {BrowserRouter,Route,Switch,Link} from 'react-router-dom';
+import PDFeditor from '../Layout/PDFeditor/PDFeditor'
+import Notessave from '../Layout/NotesSave/Notessave'
+import Dashboard from '../Layout/Dashboard/Dashboard'
+const Navbar=({ fixed }) =>{
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  return (
+    <>
+     <BrowserRouter>
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-blue-500 mb-3">
+        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+            <a
+              className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-white"
+              href="#"
+            >EduFun
+            </a>
+            <button
+              className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              type="button"
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              <i className="fas fa-bars"></i>
+            </button>
+          </div>
+          <div
+            className={
+              "lg:flex flex-grow items-center" +
+              (navbarOpen ? " flex" : " hidden")
+            }
+            id="example-navbar-danger"
+          >
+            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  href="#pablo"
+                >
+                  <span className="ml-2"><Link className="nav-link" to="/home">Dashboard</Link></span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  href="#pablo"
+                >
+                  <span className="ml-2"><Link className="nav-link" to="/savenotes">RecordNotes</Link></span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  href="#pablo"
+                >
+                  <span className="ml-2"><Link className="nav-link" to="/pdfeditor">EditPDF</Link></span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                  href="#pablo"
+                >
+                 <span className="ml-2"><Link className="nav-link" to="/team">AboutTeam</Link></span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-    )
+      </nav>
+       <Switch>
+       <Route exact path="/home" >
+       <Dashboard/>
+       </Route>
+          <Route exact path="/savenotes"  >
+              <Notessave/>
+          </Route>
+          <Route exact path="/pdfeditor">
+              <PDFeditor/>
+          </Route>
+      </Switch> 
+      </BrowserRouter>
+    </>
+  );
 }
+export default Navbar

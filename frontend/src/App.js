@@ -115,37 +115,12 @@
 // }
 
 // export default App;
-import React,{useState} from 'react'
-import {BrowserRouter,Route} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import PDFeditor from './components/Layout/PDFeditor/PDFeditor'
-import Notessave from './components/Layout/NotesSave/Notessave'
-import Dashboard from './components/Layout/Dashboard/Dahsboard'
-import menu from './Assets/menu.png'
+import './App.css'
 const App = () => {
-  const [showNavbar, setshowNavbar] = useState(false)
+  
   return (
-    <BrowserRouter>
-      <div className="App">
-        <header>
-          <div className={showNavbar ? "viewport-icon" : "viewport-180deg"} >
-            <img src={menu} alt="menu" onClick={(e) => setshowNavbar(!showNavbar)}></img>
-          </div>
-          <div className="container">
-            <Navbar showNavbar={showNavbar} setshowNavbar={setshowNavbar} onClick={(e) => setshowNavbar(!showNavbar)}></Navbar>
-          </div>
-        </header>
-        <main>
-          <Route exact path="/" component={Dashboard} />
-        
-          <Route path="/savenotes" component={Notessave} />
-          <Route path="/pdfeditor" component={PDFeditor}/>
-          {/* <Route path="/tasks/monthly" component={TaskCalendarScreen} />
-          <Route path='/tasks/:id/edit' component={EditTaskScreen} /> */}
-        </main>
-      </div>
-     
-    </BrowserRouter>
+    <Navbar/>
   )
 }
 
