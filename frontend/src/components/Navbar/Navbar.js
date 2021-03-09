@@ -152,7 +152,7 @@ import React,{useState} from "react";
 import '../../tailwind.css'
 import '../../tailwind.min.css';
 import {BrowserRouter,Route,Switch,Link} from 'react-router-dom';
-import PDFeditor from '../Layout/PDFeditor/PDFeditor'
+import Form from '../Layout/Doubts/Form'
 import Notessave from '../Layout/NotesSave/Notessave'
 import Dashboard from '../Layout/Dashboard/Dashboard'
 const Navbar=({ fixed }) =>{
@@ -205,7 +205,7 @@ const Navbar=({ fixed }) =>{
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="#pablo"
                 >
-                  <span className="ml-2"><Link className="nav-link" to="/pdfeditor">EditPDF</Link></span>
+                  <span className="ml-2"><Link className="nav-link" to="/doubt">PostYourDoubts</Link></span>
                 </a>
               </li>
               <li className="nav-item">
@@ -227,8 +227,8 @@ const Navbar=({ fixed }) =>{
           <Route exact path="/savenotes"  >
               <Notessave/>
           </Route>
-          <Route exact path="/pdfeditor">
-              <PDFeditor/>
+          <Route exact path="/doubt">
+              <Form/>
           </Route>
       </Switch> 
       </BrowserRouter>
