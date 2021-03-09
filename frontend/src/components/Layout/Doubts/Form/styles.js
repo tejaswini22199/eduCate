@@ -9,6 +9,10 @@ export default makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
   },
+  Heading:{
+    padding:'15',
+    marginLeft:'50',
+  },
   form: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -20,5 +24,13 @@ export default makeStyles((theme) => ({
   },
   buttonSubmit: {
     marginBottom: 10,
+    marginTop:20,
   },
+  lower_B:{
+     display:'flex',
+     flexDirection:'column',
+     justifyContent:'center',
+     alignItems:'center',
+
+  }
 }));

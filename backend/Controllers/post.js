@@ -13,7 +13,7 @@ export const getPosts=async(req,res)=>{
 }
 // doubtPost creation
 export const createPost=async(req,res)=>{
-    const {topic,creator,selectedFile}=req.body();
+    const {topic,creator,selectedFile}=req.body;
     const postMessage=new DoubtMessage({topic,creator,selectedFile});
     try {
          await postMessage.save();
