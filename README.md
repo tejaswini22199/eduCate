@@ -8,7 +8,7 @@
 
 * Feature 3: Students can post their doubts mentionaing topic and their names. Along with a file. Other students can solve the doubts.
 
-
+* Feature 4: Students can sell and buy products in second hand(like selling books , drafter etc)
 
 ## Technology Used
 
