@@ -10,6 +10,8 @@ import Notessave from '../Layout/NotesSave/Notessave'
 import Dashboard from '../Layout/Dashboard/Dashboard'
 import useStyles from './styles'
 import { useDispatch } from 'react-redux';
+import ProductForm from "../Layout/ProductForm/ProductForm";
+import Shop from "../Layout/Shop/Shop";
 const Navbar=({ fixed }) =>{
   const dispatch = useDispatch();
   useEffect(() => {
@@ -74,7 +76,7 @@ const Navbar=({ fixed }) =>{
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                   href="#pablo"
                 >
-                 <span className="ml-2"><Link className="nav-link" to="/team">AboutTeam</Link></span>
+                 <span className="ml-2"><Link className="nav-link" to="/shop">BUY/SELL</Link></span>
                 </a>
               </li>
             </ul>
@@ -98,6 +100,14 @@ const Navbar=({ fixed }) =>{
               </Grid>
             </Grid >
               
+          </Route>
+          <Route exact path="/shop">
+          <Grid className={classes.Form} item container xs={12} sm={12}>
+              <ProductForm/>
+              </Grid>
+              <Grid>
+                <Shop/>
+              </Grid>
           </Route>
       </Switch> 
       </BrowserRouter>

@@ -7,7 +7,6 @@ import Filebase from 'react-file-base64'
 const Form=()=>{
    const dispatch = useDispatch();
    const classes=useStyles();
-   const post = useSelector((state)=>state.posts);
  const [postData,setpostData]=useState({
      category:'',
      creator:'',
