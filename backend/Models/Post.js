@@ -8,5 +8,5 @@ const DoubtpostSchema=mongoose.Schema({
         default:new Date(),
     },
 })
-var DoubtMessage=mongoose.model(DoubtpostSchema);
+var DoubtMessage=mongoose.model('DoubtMessage',DoubtpostSchema);
 export default DoubtMessage;
