@@ -117,11 +117,20 @@
 // export default App;
 import Navbar from './components/Navbar/Navbar'
 import './App.css'
+import Home from './components/Home/Home'
+import Portis from '@portis/web3';
+import Web3 from 'web3';
+
+const portis = new Portis('YOUR_DAPP_ID', 'mainnet');
+const web3 = new Web3(portis.provider);
 
 const App = () => {
   
   return (
+    <div>
     <Navbar/>
+    <Home/>
+    </div>
   )
 }
 
