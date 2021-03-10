@@ -1,6 +1,6 @@
 import useStyles from './styles'
-import react,{useState,useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import react,{useState} from 'react'
+import { useDispatch} from 'react-redux';
 import { createPost} from '../../../../Actions/posts'
 import {Typography,TextField,Button,Paper} from '@material-ui/core'
 import Filebase from 'react-file-base64'
@@ -13,11 +13,10 @@ const Form=()=>{
      selectedFile:'',
  });
  
-const submitHandler= async (e)=>{
+const submitHandler = async (e)=>{
    e.preventDefault();
    // setpostData(e);
    dispatch(createPost(postData));
-   
 }
     return (
             <Paper  className={classes.paper}>

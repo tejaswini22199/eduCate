@@ -1,6 +1,6 @@
 import useStyles from './styles'
 import react,{useState,useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import {createProduct} from '../../../Actions/products';
 import {Typography,TextField,Button,Paper} from '@material-ui/core'
 import Filebase from 'react-file-base64'

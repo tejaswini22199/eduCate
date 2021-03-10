@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-const DoubtpostSchema=mongoose.Schema({
+const ProductSchema=mongoose.Schema({
     Name:String,
     Contact:Number,
     selectedFile:String,
@@ -10,5 +10,5 @@ const DoubtpostSchema=mongoose.Schema({
     },
    
 })
-var ProductItem=mongoose.model('ProductItem',DoubtpostSchema);
+var ProductItem=mongoose.model('ProductItem',ProductSchema);
 export default ProductItem;
