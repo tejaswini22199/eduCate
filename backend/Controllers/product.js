@@ -13,8 +13,8 @@ export const getProducts=async(req,res)=>{
 }
 // doubtPost creation
 export const createProduct=async(req,res)=>{
-    const {Name,contact,selectedFile,cost}=req.body;
-    const productMessage=new ProductItem({Name,contact,selectedFile,cost});
+    const {Name,Contact,selectedFile,cost}=req.body;
+    const productMessage=new ProductItem({Name,Contact,selectedFile,cost});
     try {
          await productMessage.save();
         res.status(201).json(productMessage);

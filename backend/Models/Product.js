@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 const ProductSchema=mongoose.Schema({
     Name:String,
     Contact:Number,
-    selectedFile:String,
     cost:Number,
+    selectedFile:String,
     createdAt:{
         type:Date,
         default:new Date(),
