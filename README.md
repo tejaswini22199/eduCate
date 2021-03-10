@@ -6,9 +6,9 @@
 
 * Feature 2: Students can get blogs events list from Event brite API and they can just say some commands based on that events will be displayed based on what they ask(Not yet Implemented)
 
-* Feature 3: Students can post their doubts mentionaing topic and their names. Along with a file. Other students can solve the doubts.(Currently Implementing this)
+* Feature 3: Students can post their doubts mentionaing topic and their names. Along with a file. Other students can solve the doubts.
 
-
+* Feature 4: Students can sell and buy products in second hand(like selling books , drafter etc)
 
 ## Technology Used
 
