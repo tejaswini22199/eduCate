@@ -6,6 +6,8 @@ import dotenv from "dotenv"
 const env=dotenv.config();
 import postRoutes from './Routes/posts.js'
 import productRoutes from './Routes/product.js'
+
+
 const app=express();
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))

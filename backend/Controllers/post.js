@@ -13,8 +13,10 @@ export const getPosts=async(req,res)=>{
 }
 // doubtPost creation
 export const createPost=async(req,res)=>{
-    const {topic,creator,selectedFile}=req.body;
-    const postMessage=new DoubtMessage({topic,creator,selectedFile});
+    // console.log(req.body);
+    const {category,creator,selectedFile}=req.body;
+    // console.log(req);
+    const postMessage=new DoubtMessage({category,creator,selectedFile});
     try {
          await postMessage.save();
         res.status(201).json(postMessage);

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 const DoubtpostSchema=mongoose.Schema({
-    topic:String,
+    category:String,
     creator:String,
     selectedFile:String,
     createdAt:{
